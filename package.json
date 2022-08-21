@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:android": "npx ionic cap run android",
+    "dev:android": "yarn build && npx cap sync android && npx cap run android",
     "build": " next build && next export && cp -R ./public/* ./out",
     "start": "next start",
     "lint": "next lint"
