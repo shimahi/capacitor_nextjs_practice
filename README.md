@@ -1,5 +1,7 @@
-
 Mac専用
+
+[Capacitorjs](https://capacitorjs.jp/)でWebアプリをクロスプラットフォームでビルドする
+
 
 事前にXcodeとAndroid Studioをインストールしておく
 
