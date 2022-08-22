@@ -2,6 +2,7 @@ import type { InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
+import { pagesPath } from '../lib/$path'
 type PropsType = InferGetStaticPropsType<typeof getStaticProps>
 
 const Home = (props: PropsType) => {
@@ -15,8 +16,13 @@ const Home = (props: PropsType) => {
         </p>
 
         <div>
-          <Link href='/about'>
+          <Link href={pagesPath.about.$url()}>
             <a>Aboutページへ移動</a>
+          </Link>
+        </div>
+        <div>
+          <Link href={pagesPath.company.$url()}>
+            <a>Companyページへ移動</a>
           </Link>
         </div>
       </main>
