@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:ios": "yarn build && npx cap sync ios && npx cap run ios",
-    "dev:android": "yarn build && npx cap sync android && npx cap run android",
-    "build": " next build && next export && cp -R ./public/* ./out",
+    "dev:ios": "yarn build:native && npx cap sync ios && npx cap run ios",
+    "dev:android": "yarn build:native && npx cap sync android && npx cap run android",
+    "build:web": "next build",
+    "build:native": "IS_NATIVE=true next build && next export && cp -R ./public/* ./out",
     "start": "next start",
     "lint": "next lint"
   },
@@ -26,6 +27,7 @@
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
     "pathpida": "^0.18.1",
-    "typescript": "4.7.4"
+    "typescript": "4.7.4",
+    "webpack-preprocessor-loader": "^1.2.0"
   }
 }

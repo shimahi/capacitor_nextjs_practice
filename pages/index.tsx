@@ -31,17 +31,15 @@ const Home = (props: PropsType) => {
 }
 
 // ネイティブではgetStaticProps or getServerSidePropsを行わない
-const IS_NATIVE = true
-
-export const getStaticProps = IS_NATIVE
-  ? undefined
-  : () => {
-      return {
-        props: {
-          text: `これはgetStaticPropsのデータです。`,
-        },
-        revalidate: 600,
-      }
-    }
+// #!if isWeb
+export const getStaticProps = () => {
+  return {
+    props: {
+      text: `これはgetStaticPropsのデータです。`,
+    },
+    revalidate: 600,
+  }
+}
+// #!endif
 
 export default Home
